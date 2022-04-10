@@ -39,7 +39,8 @@ const Form: React.FC<IProps> = ({ people, setPeople }) => {
             {
                 name: input.name,
                 age: parseInt(input.age),
-                url: input.url
+                url: input.url, 
+                note: input.note
             }
         ])
 
