@@ -7,7 +7,17 @@ interface IProps{
     setPeople:  React.Dispatch<React.SetStateAction<Props['people']>>
 }
 
+// interface IForms{
+//     form: {
+//         name: string
+//         age: number
+//         url: string
+//         note: string
+//     }
+// }
+
 const Form: React.FC<IProps> = ({ people, setPeople }) => {
+    // can i add an interface to the form state data
     const [input, setInput] = useState({
         name: "",
         age: "", 

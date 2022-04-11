@@ -12,6 +12,7 @@ import { IState as IProps } from '../App' // this is done to repeat repetition..
 //   }
 
 const List: React.FC<IProps> = ({ people }) => {
+  // we are destructuring the people array we passed down as props 😄
     console.log(people)
 
     // typescript makes you put a return on your functions... 

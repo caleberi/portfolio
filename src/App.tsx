@@ -3,6 +3,13 @@ import React, { useState } from 'react';
 import './App.css';
 import Form from './Components/Form';
 import List from './Components/List';
+import TodoPage from './Pages/TodoPage'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+// import Todo from './Components/Todo';
 
 
 export interface IState{
@@ -30,12 +37,22 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h2>People Invited to my party</h2>
-      <List people={person}/>
-      
-      <Form people={person} setPeople={setPerson}/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+            <div className="App">
+            <h2>People Invited to my party</h2>
+            <List people={person}/>
+            
+            <Form people={person} setPeople={setPerson}/>
+          </div>
+        } />
+
+        {/* SECOND ROUTE */}
+        <Route path="/todo" element={<TodoPage />}/>
+       
+      </Routes>
+    </BrowserRouter>
   );
 }
 
