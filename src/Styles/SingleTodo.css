@@ -11,6 +11,9 @@
     width: 50%;
     margin: 0 auto;
     border-radius: 10px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 5px;
 }
 
 .singleTodo__list > p {
@@ -20,6 +23,10 @@
 
 .singleTodo__list > span{
     margin: 0 10px;
+}
+
+.singleTodo__list > input {
+    margin-right: auto;
 }
 
 .completed{
