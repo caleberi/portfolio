@@ -10,14 +10,34 @@ interface Props{
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
 }
 
+
+
 const SingleTodo:React.FC<Props> = ({ todo, todos, setTodos }) => {
+
+    const handleDone = (id: number) => {
+        setTodos(
+            todos.map((todo) => todo.id === id ? 
+            {
+                ...todo, 
+                isDone: !todo.isDone
+            }
+            :
+            todo
+            )
+        )
+    }
+
+    const handleDelete = (id: number) => {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
+
   return (
     <form className='singleTodo'>
         <div className='singleTodo__list'>
-            <p>{todo.todo}</p>
+            <p className={todo.isDone ? 'completed' : ''}>{todo.todo}</p>
             <span><AiFillEdit /></span>
-            <span><AiFillDelete /></span>
-            <span><MdDone /></span>
+            <span onClick={() => handleDelete(todo.id)}><AiFillDelete /></span>
+            <span onClick={() => handleDone(todo.id)}><MdDone /></span>
         </div>
     </form>
   )
