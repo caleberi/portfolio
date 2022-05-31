@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import QuestionCard from '../Components/QuestionCard'
 import { fetchQuizQuestions, Difficulty, QuestionState } from '../utils/Api'
+import './QuizPage.css'
 
 const TOTAL_QUESTIONS = 10
 
@@ -21,7 +22,7 @@ export const QuizPage = () => {
     const [gameOver, setGameOver] = useState(true)
 
     // console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY))
-    console.log(questions)
+    // console.log(questions)
 
     // starting game
     const startTrivia = async () => {
@@ -83,16 +84,16 @@ export const QuizPage = () => {
 
 
     return(
-        <div>
+        <div className='quizPage'>
             <h2>REACT TYPESCRIPT QUIZ</h2>
             {
                 gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-                    <button className='question__start' onClick={startTrivia}>Start</button>
+                    <button className='quizPage__start' onClick={startTrivia}>Start</button>
                 ) : null
             }
             
-            {!gameOver ? <p className="question__score">Score: {score}</p> : null}
-            {loading ? <p>Loading Questions</p>: null }
+            {!gameOver ? <p className="quizPage__score">Score: {score}</p> : null}
+            {loading ? <p>Loading Questions...</p>: null }
 
             {!loading && !gameOver && (
                  <QuestionCard 
@@ -106,7 +107,7 @@ export const QuizPage = () => {
             )}
             
             {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (
-                <button className="question__next" onClick={nextQuestion}>Next Question</button>
+                <button className="quizPage__nextQuestion" onClick={nextQuestion}>Next Question</button>
             )}
         </div>
     )

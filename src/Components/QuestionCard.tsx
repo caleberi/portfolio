@@ -1,5 +1,6 @@
 import React from 'react'
 import { AnswerObject } from '../Pages/QuizPage'
+import './QuestionCard.css'
 
 type QuestionCardProps = {
     question: string;
@@ -13,17 +14,17 @@ type QuestionCardProps = {
 
 const QuestionCard = ({ question, answers, callback, userAnswer, questionNumber, totalQuestion }: QuestionCardProps) => {
   return (
-    <div style={{ border: "2px dashed orange" }}>
+    <div className='questionCard'>
         <p className="questionCard__number">
             Question: {questionNumber} / {totalQuestion}
         </p>
 
         {/* watch this */}
-        <p>{question}</p>
+        <p className='questionCard__question'>{question}</p>
 
         <div>
             {answers.map(answer => (
-                <div>
+                <div className='questionCard__options' key={answer}>
                     <button 
                     // 😮‍💨 use double bangs to set something to boolean... 
                         disabled={!!userAnswer}
