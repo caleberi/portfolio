@@ -4,7 +4,7 @@ import { fetchQuizQuestions, Difficulty, QuestionState } from '../utils/Api'
 
 const TOTAL_QUESTIONS = 10
 
-type AnswerObject = {
+export type AnswerObject = {
     question: string;
     answer: string;
     correct: boolean;
@@ -46,13 +46,41 @@ export const QuizPage = () => {
 
     // selectinng answer
     const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if(!gameOver){
+            //get user answerw
+            const answer = e.currentTarget.value;
+            // check answer against the correct value
+            const correct = questions[number].correct_answer === answer; //this gives us true or false
+            //Add score if answer is correct
+            if (correct) setScore(prevScore => prevScore + 1)
 
+            // save answer in the array of the user answers
+            const answerObject = {
+                question: questions[number].question,
+                answer, 
+                correct,
+                correctAnswer: questions[number].correct_answer
+            }
+
+            setUserAnswers(prevAnswers => [...prevAnswers, answerObject])
+        }
     }
 
     // next question
     const nextQuestion = () => {
+        // move onto the next question if not the last question
+        const nextQuestion = number + 1
+
+        if(nextQuestion === TOTAL_QUESTIONS){
+            setGameOver(true)
+        }
+        else{
+            setNumber(nextQuestion)
+        }
 
     }
+
+
 
     return(
         <div>
@@ -63,19 +91,23 @@ export const QuizPage = () => {
                 ) : null
             }
             
-            {!gameOver ? <p className="question__score">Score:</p> : null}
-            <p>Loading Questions</p>
+            {!gameOver ? <p className="question__score">Score: {score}</p> : null}
+            {loading ? <p>Loading Questions</p>: null }
 
-            {/* <QuestionCard 
-                questionNumber={number + 1}
-                totalQuestion={TOTAL_QUESTIONS}
-                question={questions[number].question}
-                answers={questions[number].answers}
-                userAnswer={userAnswers ? userAnswers[number] : undefined}
-                callback={checkAnswer}
-            /> */}
-
-            <button className="question__next" onClick={nextQuestion}>Next Question</button>
+            {!loading && !gameOver && (
+                 <QuestionCard 
+                    questionNumber={number + 1}
+                    totalQuestion={TOTAL_QUESTIONS}
+                    question={questions[number].question}
+                    answers={questions[number].answers}
+                    userAnswer={userAnswers ? userAnswers[number] : undefined}
+                    callback={checkAnswer}
+                /> 
+            )}
+            
+            {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (
+                <button className="question__next" onClick={nextQuestion}>Next Question</button>
+            )}
         </div>
     )
 }
