@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { QuizPage } from './Pages/QuizPage'
+import VictorPage from './Pages/VictorPage';
 
 const App = () => {
   return(
@@ -14,6 +15,7 @@ const App = () => {
 
         <Route path="/" element={<QuizPage />}/>
 
+        <Route path="/victor" element={<VictorPage />} />
       </Routes>
     </BrowserRouter>
   )
