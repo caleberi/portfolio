@@ -6,16 +6,17 @@ import {
   Route,
 } from "react-router-dom";
 import { QuizPage } from './Pages/QuizPage'
-import VictorPage from './Pages/VictorPage';
+import PortfolioPage from './Pages/PortfolioPage/PortfolioPage';
 
 const App = () => {
   return(
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<QuizPage />}/>
+        <Route path="/" element={<PortfolioPage />} />
 
-        <Route path="/victor" element={<VictorPage />} />
+        <Route path="/quiz" element={<QuizPage />}/>
+
       </Routes>
     </BrowserRouter>
   )
