@@ -1,9 +1,6 @@
 .portfolio__page{
     background-color: #DEE3E5;
     height: 100vh;
-    /* color: red; */
-    /* display: grid;
-    place-items: center; */
     display: flex;
     justify-content: center;
     align-items: center;

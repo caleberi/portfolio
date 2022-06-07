@@ -2,6 +2,7 @@ import React from 'react'
 import './PortfolioSummary.css';
 import image from '../../assets/portfolioAssets/user.jpg'
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
+import Button from '../../MiniComponents/Button/Button';
 
 const style = {
     color: "white",
@@ -26,9 +27,10 @@ const PortfolioSummary = () => {
                 <FaTwitter style={style}/>
             </div>
 
-            <button className="portfolio__summaryCV">
+            {/* <button className="portfolio__summaryCV">
                 Download CV
-            </button>
+            </button> */}
+            <Button name='Download CV' style={{ marginTop: '50px' }}/>
         </div>
 
         <div className="portfolio__summaryDetailsFooter">

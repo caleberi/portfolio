@@ -1,0 +1,8 @@
+.portfolioRoutesPages{
+    overflow-y: scroll;
+    height: 100%;
+    background-color:white;
+    flex: 0.7;
+    border-radius: 20px;
+    padding: 50px 50px 0px;
+}

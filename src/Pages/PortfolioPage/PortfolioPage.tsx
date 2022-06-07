@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
-import PortfolioRoutes from '../../Components/PortfolioRoutes/PortfolioRoutes';
 import PortfolioSummary from '../../Components/PortfolioSummary/PortfolioSummary';
 import PortfolioResume from '../../Components/PortfolioResume/PortfolioResume';
+import PortfolioRoutesPages from '../PortfolioRoutesPages/PortfolioRoutesPages';
+import PortfolioProjects from '../../Components/PortfolioProjects/PortfolioProjects';
+import PortfolioAbout from '../../Components/PortfolioAbout/PortfolioAbout';
 import './PortfolioPage.css';
 
 
 const PortfolioPage = () => {
-    const [trackPage, setTrackPage] = useState(1)
+    const [trackPage, setTrackPage] = useState(0)
     const pageLinks = [
+        {
+            id: 0,
+            name: 'About'
+        },
         {
             id: 1,
             name: 'Resume',
@@ -22,9 +28,11 @@ const PortfolioPage = () => {
         // 0 should be the first page
         console.log(trackPage ,pageLinks);
         if(trackPage === 1){
-            return <PortfolioRoutes />
-        }else if(trackPage === 2){
             return <PortfolioResume />
+        }else if(trackPage === 2){
+            return <PortfolioProjects />
+        }else{
+            return <PortfolioAbout />
         }
     }
 
@@ -34,7 +42,9 @@ const PortfolioPage = () => {
             {/* portfolio summary */}
             <PortfolioSummary />
             
-            {PageDisplay(pageLinks[1].id)}
+            <PortfolioRoutesPages>
+                {PageDisplay(pageLinks[1].id)}
+            </PortfolioRoutesPages>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             {pageLinks.map(pageLink => (
