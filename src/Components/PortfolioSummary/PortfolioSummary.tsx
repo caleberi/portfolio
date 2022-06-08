@@ -30,7 +30,14 @@ const PortfolioSummary = () => {
             {/* <button className="portfolio__summaryCV">
                 Download CV
             </button> */}
-            <Button name='Download CV' style={{ marginTop: '50px' }}/>
+        <Button 
+            border='2px solid white'
+            borderRadius='50px'
+            children = 'Download CV'
+            color='white'
+            backgroundColor='transparent'
+            marginTop='50px'
+        />
         </div>
 
         <div className="portfolio__summaryDetailsFooter">

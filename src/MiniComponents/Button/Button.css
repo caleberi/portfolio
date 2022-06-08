@@ -1,15 +1,42 @@
-button{
+/* button{
+    border: 2px solid white;
+    color: white;
     padding: 12px 32px;
     border-radius: 50px;
-    border: 2px solid white;
     background: transparent;
-    color: white;
     font-size: 15px;
     cursor: pointer;
 }
 
-button:hover{
+.button-hover:hover{
     background: white;
     color: #04B4E0;
     border: 2px solid #04B4E0;
 }
+
+.button__downloadCV:hover{
+    background: #04B4E0;
+    color: white;
+}
+
+.button__contact:hover{
+    background: lightslategray;
+    color: black;
+}
+ */
+
+ .custom-button{
+    padding: 12px 32px;
+    font-size: 15px;
+    cursor: pointer;
+    line-height: 18px;
+ }
+
+ .custom-button:hover{
+     /* color: red; */
+     background: red;
+ }
+
+ .add__hover{
+     background: red;
+ }

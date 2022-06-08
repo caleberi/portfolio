@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap');
 
 .portfolioAbout{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-top: 110px;
     font-family: 'Poppins', sans-serif;
 }
@@ -44,4 +44,66 @@
     color: #555555;
     line-height: 26.25px;
     font-size: 15px;
+}
+
+/* WHAT I DO SECTION */
+.portfolioAbout__what{
+    margin: 100px 0px 50px;
+    /* border: 2px solid red; */
+}
+
+.portfolioAbout__whatHeader{
+    font-size: 21px;
+}
+
+.whatHeader__lists{
+    /* background-color: red; */
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.whatHeader__list:nth-child(2n){
+    /* border: 2px solid red; */
+}
+
+.whatHeader__list > h1 {
+    font-size: 42px;
+    color: #0AAED9;
+}
+
+.whatHeader__list > h2{
+    margin: 10px 0px;
+}
+
+/* PORTFOLIO ABOUT TESTIMONIAL */
+.portfolioAbout__testimonial{
+    border: 1px solid red;
+    height: 40px;
+}
+
+.portfolioAbout__testimonialHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolioAbout__testimonialCards{
+    /* border: 1px solid green; */
+    margin-top: 50px;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* flex-wrap: wrap; */
+    overflow-x: scroll;
+}
+
+.portfolioAbout__testimonialCard{
+    border: 1px solid red;
+    /* width: 700px; */
+    /* flex: 0.5; */
+}
+
+.portfolioAbout__testimonialCard > *{
+    /* flex: 0.5; */
 }
