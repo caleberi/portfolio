@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReducerAction, useState } from 'react'
 import './PortfolioAbout.css'
 import User from '.././../assets/portfolioAssets/user.jpg'
 import Button from '../../MiniComponents/Button/Button'
@@ -6,6 +6,17 @@ import { BsShop, BsPencil, BsFlag } from 'react-icons/bs'
 import { FaDesktop } from 'react-icons/fa';
 import Testimonial1 from '../../assets/portfolioAssets/testimonial-1.jpg'
 import Testimonial2 from '../../assets/portfolioAssets/testimonial-2.jpg'
+import { FaQuoteRight } from 'react-icons/fa'
+import Client1 from '../../assets/portfolioAssets/client-1.png';
+import Client2 from '../../assets/portfolioAssets/client-2.png';
+import Client3 from '../../assets/portfolioAssets/client-3.png'
+import Client4 from '../../assets/portfolioAssets/client-4.png'
+import Client5 from '../../assets/portfolioAssets/client-5.png'
+import Client6 from '../../assets/portfolioAssets/client-6.png'
+import Client7 from '../../assets/portfolioAssets/client-7.png'
+import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai'
+import { BsAlarm } from 'react-icons/bs'
+
 
 type WhatProp = {
     id: number;
@@ -20,6 +31,24 @@ type TestimonialProp = {
     name: string;
     company: string;
     image: any;
+}
+
+type ClientImageProp = {
+    id: number;
+    image: any;
+}
+
+type PricingProp = {
+    id: number;
+    package: string;
+    price: number;
+}
+
+type FunProp = {
+    id: number;
+    icon?: any;
+    text: string;
+    count: number;
 }
 
 
@@ -69,9 +98,82 @@ const PortfolioAbout = () => {
         {
             id: 3,
             text: 'Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.',
-            name: 'Julia Hickman',
-            company: 'Omni Source',
+            name: 'Kristin Caroll',
+            company: 'Helping Hands',
             image: Testimonial1
+        }, 
+        {
+            id: 4,
+            text: 'Vivamus at molestie dui, eu ornare orci. Curabitur vel egestas dolor. Nulla condimentum nunc sit amet urna tempus finibus. Duis mollis leo id ligula pellentesque, at vehicula dui ultrices.',
+            name: 'Robert Watskin',
+            company: 'Endicott Shoes',
+            image: Testimonial2
+        },
+        
+    ])
+
+    const [clientLists] = useState<ClientImageProp[]>([
+        {
+            id: 1,
+            image: Client1
+        },
+        {
+            id: 2,
+            image: Client2,
+        },
+        {
+            id: 3,
+            image: Client3
+        }, 
+        {
+            id: 4,
+            image: Client4
+        }, 
+        {
+            id: 5,
+            image: Client5
+        }, 
+        {
+            id: 6,
+            image: Client6
+        },
+        {
+            id: 7,
+            image: Client7
+        }
+    ])
+    
+    const [pricingLists] = useState<PricingProp[]>([
+        {
+            id: 1,
+            package: 'Silver',
+            price: 64,
+        }, 
+        {
+            id: 2,
+            package: 'Gold',
+            price: 128,
+        }
+    ])
+
+    const [funs] = useState<FunProp[]>([
+        {
+            id: 1,
+            text: 'Happy Clients', 
+            count: 578,
+            icon: <AiOutlineHeart />
+        },
+        {
+            id: 2,
+            text: 'Working Hours',
+            count: 4780,
+            icon: <BsAlarm />
+        },
+        {
+            id: 3, 
+            text: 'Awards Won',
+            count: 15,
+            icon: <AiOutlineStar />
         }
     ])
 
@@ -140,16 +242,84 @@ const PortfolioAbout = () => {
             {/* testimonial cards */}
             <div className="portfolioAbout__testimonialCards">
                 {testimonialList.map(testimonial => (
-                    <div className="portfolioAbout__testimonialCard">
+                    <div className="portfolioAbout__testimonialCard" key={testimonial.id}>
                         <img src={testimonial.image} alt={testimonial.name} />
-                        <p>{testimonial.text}</p>
+                        <p className="portfolioAbout__testimonialCardText">{testimonial.text}</p>
 
-                        <b>{testimonial.name}</b>
-                        <p style={{ color: '#0AAED9' }}>{testimonial.company}</p>
+                        <p className="portfolioAbout__testimonialCardBold">{testimonial.name}</p>
+                        <p style={{ color: '#0AAED9', fontSize: '13px' }}>{testimonial.company}</p>
+
+                        <FaQuoteRight style={{ position: 'absolute', bottom: '10px', right: '10px', color: '#0AAED9', }}/>
                     </div>
                 ))}
             </div>
             
+        </div>
+
+        {/* PORTFOLIO CLIENTS */}
+        <div className="portfolioAbout__client">
+            <div className="portfolioAbout__clientHeader">
+                <h1>Clients</h1>
+                <div className="portfolioAbout__clientHeaderButtons">
+                    <button>left</button>
+                    <button>right</button>
+                </div>
+            </div>
+
+            <div className="portfolioAbout__clients">
+                {
+                    clientLists.map(client => (
+                        <img src={client.image} alt={`picture${client.id}`} />
+                    ))
+                }
+            </div>
+        </div>
+
+        {/* PORTFOLIO PRICING */}
+        <div className="portfolio__pricing">
+            <h4>Pricing</h4>
+
+            <div className="portfolio__pricingContainer">
+                {pricingLists.map(priceList => (
+                    <div className="portfolio__pricingItem">
+                        <p className='portfolio__pricingPackage'>{priceList.package}</p>
+
+                        <div className='portfolio__priceDetail'>
+                            <p className='portfolio__pricingPrice'>${priceList.price}</p>
+                            <small className='portfolio__pricingSmall'>per month</small>
+                        </div>
+                            
+                        <Button 
+                            border='2px solid lightgray'
+                            borderRadius='50px'
+                            children = 'Free Trial'
+                            color='black'
+                            backgroundColor='transparent'
+                        />
+                        <div className='portfolio__pricingText'>
+                            <p>Lorem ipsum dolor</p>
+                            <p>Pellentesque scelerisque</p>
+                            <p>Morbi eu sagittis</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {/* PORTFOLIO FUN FACTS */}
+        <div className="portfolio__fun">
+            <h2>Fun Facts</h2>
+
+            <div className="portfolio__funItems">
+                {funs.map(fun => (
+                    <div className="portfolio__funItem">
+                        <p style={{fontSize: '33px', color: '#04B4E0'}}>{fun.icon}</p>
+                        <p>{fun.text}</p>
+                        <p>{fun.count}</p>
+                        {/* <p>{fun.text}</p> */}
+                    </div>
+                ))}
+            </div>
         </div>
     </div>
   )

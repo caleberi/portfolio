@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap');
 
 .portfolioAbout{
     /* border: 1px solid red; */
-    margin-top: 110px;
+    margin-top: 95px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -79,8 +79,8 @@
 
 /* PORTFOLIO ABOUT TESTIMONIAL */
 .portfolioAbout__testimonial{
-    border: 1px solid red;
-    height: 40px;
+    /* border: 3px solid purple; */
+    margin-bottom: 15px;
 }
 
 .portfolioAbout__testimonialHeader{
@@ -89,21 +89,183 @@
 }
 
 .portfolioAbout__testimonialCards{
-    /* border: 1px solid green; */
-    margin-top: 50px;
-    /* display: flex; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* flex-wrap: wrap; */
+    /* border: 2px solid green; */
+    margin-top: 20px;
+    padding-top: 50px;
+    display: inline-flex;
+    gap: 40px;
     overflow-x: scroll;
+    position: relative;
 }
 
+.portfolioAbout__testimonialCards::-webkit-scrollbar {
+    display: none;
+  }
+
+.portfolioAbout__testimonialCards > div:first-child{
+    /* color: green; */
+}
+
+.portfolioAbout__testimonialCards > div{
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    padding: 0px 21px 5px;
+    flex: 1 0 50%;
+}
+
+.portfolioAbout__testimonialCards > div > img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: -40px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    z-index: 1;
+}
+
+.portfolioAbout__testimonialCards > div > .portfolioAbout__testimonialCardText{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+}   
+
+.portfolioAbout__testimonialCards > div > .portfolioAbout__testimonialCardBold{
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+
 .portfolioAbout__testimonialCard{
-    border: 1px solid red;
-    /* width: 700px; */
-    /* flex: 0.5; */
 }
 
 .portfolioAbout__testimonialCard > *{
-    /* flex: 0.5; */
+}
+
+/* PORTFOLIO CLIENT */
+.portfolioAbout__client{
+    /* border: 1px solid purple; */
+    margin: 50px 0;
+}
+
+.portfolioAbout__clientHeader {
+    display: flex;
+}
+
+.portfolioAbout__clientHeader > .portfolioAbout__clientHeaderButtons{
+    margin-left: auto;
+}
+
+.portfolioAbout__clients{
+    /* background: red; */
+    display: flex;
+    gap: 70px;
+    overflow-x: scroll;
+}
+
+.portfolioAbout__clients::-webkit-scrollbar {
+    display: none;
+  }
+
+.portfolioAbout__clients > img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* PORTFOLIO PRICING */
+.portfolio__pricing{
+    /* border: 1px solid red; */
+    margin-bottom: 30px;
+}
+
+.portfolio__pricing > h4{
+    font-size: 21px;
+    margin-bottom: 50px;
+}
+
+.portfolio__pricingContainer{
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio__pricingItem{
+    width: 49%;
+    /* border: 1px solid red; */
+    height: 400px;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 0px 20px;
+}
+
+.portfolio__pricingItem:hover {
+    margin-top: -20px;
+    transition: all 0.3s ease-in-out 0.2s;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.portfolio__pricingItem > .portfolio__pricingPackage {
+    /* color: red; */
+    margin-bottom: 25px;
+}
+
+.portfolio__pricingItem > div > .portfolio__pricingPrice {
+    font-size: 2.625rem;
+}
+
+.portfolio__pricingSmall{
+    color: lightgray;
+    font-size: 11.25px;
+}
+
+.portfolio__priceDetail{
+    margin-bottom: 25px;
+}
+
+.portfolio__pricingText{
+    margin-top: 25px;
+}
+
+.portfolio__pricingText > p{
+    line-height: 26.25px;
+    margin-bottom: 10px;
+    /* color: red; */
+}
+
+/* PORTFOLIO FUN FACTS */
+.portfolio__funItems{
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.portfolio__funItem{
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius:20px;
+}
+
+.portfolio__funItem >  p{
+    margin-bottom: 20px;
+}
+
+.portfolio__funItem > p:nth-child(2){
+    font-weight: 600;
+}
+
+.portfolio__funItem > p:nth-child(3){
+    font-size: 36px;
+    color: gray;
 }
