@@ -1,0 +1,16 @@
+.buttonCarousel{
+    width: 28px;
+    height: 28px;
+    border: 1px solid #E5E5E5;
+    background-color: #fff;
+    color: #666666;
+    font-size: 12px;
+    margin: 0 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttonCarousel:hover{
+    background: #04B4E0;
+    color: #fff;
+}

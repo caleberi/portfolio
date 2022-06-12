@@ -240,6 +240,13 @@
 }
 
 /* PORTFOLIO FUN FACTS */
+.portfolio__fun{
+    margin-top: 50px;
+}
+.portfolio__fun > h2{
+    margin-bottom: 30px;
+}
+
 .portfolio__funItems{
     /* border: 1px solid red; */
     display: grid;
@@ -257,8 +264,18 @@
     border-radius:20px;
 }
 
+.portfolio__funItem:hover{
+    /* margin-top: -20px; */
+    transition:  0.3s ease-in-out ;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
 .portfolio__funItem >  p{
     margin-bottom: 20px;
+}
+
+.portfolio__funItem > p:first-child{
+    margin-top: 20px ;
 }
 
 .portfolio__funItem > p:nth-child(2){

@@ -2,13 +2,13 @@ import React from 'react'
 import './Button.css'
 
 type ButtonProps = {
-   border: string;
-   color: string;
-   children: string;
-   borderRadius: string;
-   backgroundColor: string;
-    marginTop?: string;
-    marginRight?: string;
+  border: string;
+  color: string;
+  children: string;
+  borderRadius: string;
+  backgroundColor: string;
+  marginTop?: string;
+  marginRight?: string;
 }
 
 const Button = ({ children, border, borderRadius, backgroundColor, color, marginTop, marginRight}: ButtonProps) => {

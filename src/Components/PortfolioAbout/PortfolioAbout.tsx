@@ -2,7 +2,7 @@ import React, { ReducerAction, useState } from 'react'
 import './PortfolioAbout.css'
 import User from '.././../assets/portfolioAssets/user.jpg'
 import Button from '../../MiniComponents/Button/Button'
-import { BsShop, BsPencil, BsFlag } from 'react-icons/bs'
+import { BsShop, BsPencil, BsFlag, BsChevronRight, BsChevronLeft } from 'react-icons/bs'
 import { FaDesktop } from 'react-icons/fa';
 import Testimonial1 from '../../assets/portfolioAssets/testimonial-1.jpg'
 import Testimonial2 from '../../assets/portfolioAssets/testimonial-2.jpg'
@@ -16,6 +16,7 @@ import Client6 from '../../assets/portfolioAssets/client-6.png'
 import Client7 from '../../assets/portfolioAssets/client-7.png'
 import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai'
 import { BsAlarm } from 'react-icons/bs'
+import ButtonCarousel from '../../MiniComponents/ButtonCarousel/ButtonCarousel'
 
 
 type WhatProp = {
@@ -30,7 +31,7 @@ type TestimonialProp = {
     text: string;
     name: string;
     company: string;
-    image: any;
+    image: string;
 }
 
 type ClientImageProp = {
@@ -234,8 +235,8 @@ const PortfolioAbout = () => {
                 <h3>Testimonial</h3>
 
                 <div className="portfolioAbout__testimonialButtons">
-                    <button>left</button>
-                    <button>right</button>
+                    <ButtonCarousel children={<BsChevronLeft/>} handleClick={() => alert('working from props ts kingdom')}/>
+                    <ButtonCarousel children={<BsChevronRight/>} handleClick={() => alert('working from props ts kingdom')}/>
                 </div>
             </div>
             
@@ -261,8 +262,8 @@ const PortfolioAbout = () => {
             <div className="portfolioAbout__clientHeader">
                 <h1>Clients</h1>
                 <div className="portfolioAbout__clientHeaderButtons">
-                    <button>left</button>
-                    <button>right</button>
+                <ButtonCarousel children={<BsChevronLeft/>} handleClick={() => alert('working from props ts kingdom')}/>
+                    <ButtonCarousel children={<BsChevronRight/>} handleClick={() => alert('working from props ts kingdom')}/>
                 </div>
             </div>
 
@@ -316,7 +317,6 @@ const PortfolioAbout = () => {
                         <p style={{fontSize: '33px', color: '#04B4E0'}}>{fun.icon}</p>
                         <p>{fun.text}</p>
                         <p>{fun.count}</p>
-                        {/* <p>{fun.text}</p> */}
                     </div>
                 ))}
             </div>
