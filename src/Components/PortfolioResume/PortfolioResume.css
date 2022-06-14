@@ -1,0 +1,17 @@
+.resume{
+    /* border: 1px solid red; */
+}
+
+.resume__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.resume__gridRight{
+    /* background: red; */
+}
+
+.resume__knowledgeButtonContainer{
+    /* border: 1px solid red; */
+    width: 80%;
+}

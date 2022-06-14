@@ -1,0 +1,24 @@
+.progress__container{
+    /* border: 1px solid red; */
+    margin-bottom: 15px;
+}
+
+.progress__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumeProgressBar {
+    height: 10px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.resumeProgressBarInner{
+    height: 100%;
+}
+
+
+.resumeKnowledge{
+    width: 70%;
+}
