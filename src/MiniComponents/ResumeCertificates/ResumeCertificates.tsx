@@ -10,7 +10,7 @@ type CertificateProps = {
 
 const ResumeCertificates = ({ images, title, membershipId, date }: CertificateProps) => {
   return (
-    <div>
+    <div className='resume__certificateItem'>
         {title} 
         {membershipId}       
         {date}

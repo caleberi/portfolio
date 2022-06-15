@@ -1,0 +1,37 @@
+.portfolioProjects{
+    /* border: 1px solid red; */
+}
+
+.portfolioProjects__items{
+    /* border: 3px solid purple; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolioProjects__item > img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.portfolioProjects__item > img:hover{
+    transform: scale(1.1);
+    /* transform: ; */
+    transition: 0.3s all ease-in;
+}
+
+.portfolioProjects__item{
+    flex: 1 0 30%;
+    border: 1px solid red;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.portfolioProjects__item > p{
+    margin-top: 10px;
+    font-weight: bolder;
+}

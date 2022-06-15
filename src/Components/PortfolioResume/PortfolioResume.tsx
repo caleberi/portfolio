@@ -73,7 +73,39 @@ const PortfolioResume = () => {
           {/* EDUCATION */}
           <div className="resume__gridLeftEducation">
             <h3>Education</h3>
-
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
+            <h3>Education</h3>
 
           </div>
         </div>
@@ -156,11 +188,26 @@ const PortfolioResume = () => {
           </div> 
 
         </div>
+      </div>
 
-        {/* RESUME CERTIFICATES */}
-        <div className="resume__certificates">
+{/* CERTIFICATE CONTAINER */}
+      <div className="resume__certificatesContainer">
+        <h3 className="resume__certificatesHeader">Certificates</h3>
+
+        <div className="resume__certificatesItems">
           {certificates.map((certificate) => (
-              <ResumeCertificates  images={certificate.image} title={certificate.title} membershipId={certificate.membershipId} date={certificate.date}/>
+            <div className="resume__certificatesItem">
+
+              <div className="resume__contentImage">
+                <img src={certificate.image} alt={`certificate${certificate.id}`} />
+              </div>
+              <div className="resume__content">
+                <p>{certificate.title}</p>
+                <p>Membership ID: {certificate.membershipId}</p>
+                <p>{certificate.date}</p>
+              </div>
+
+            </div>
           ))}
         </div>
       </div>
