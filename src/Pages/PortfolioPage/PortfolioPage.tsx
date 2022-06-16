@@ -5,6 +5,7 @@ import PortfolioRoutesPages from '../PortfolioRoutesPages/PortfolioRoutesPages';
 import PortfolioProjects from '../../Components/PortfolioProjects/PortfolioProjects';
 import PortfolioAbout from '../../Components/PortfolioAbout/PortfolioAbout';
 import './PortfolioPage.css';
+import PortfolioBlog from '../../Components/PortfolioBlog/PortfolioBlog';
 
 
 const PortfolioPage = () => {
@@ -21,6 +22,10 @@ const PortfolioPage = () => {
         {
             id: 2,
             name: 'Portfolio',
+        }, 
+        {
+            id: 3,
+            name: 'Blog'
         }
     ];
 
@@ -31,7 +36,10 @@ const PortfolioPage = () => {
             return <PortfolioResume />
         }else if(trackPage === 2){
             return <PortfolioProjects />
-        }else{
+        }else if(trackPage === 3){
+            return <PortfolioBlog />
+        }
+        else{
             return <PortfolioAbout />
         }
     }
