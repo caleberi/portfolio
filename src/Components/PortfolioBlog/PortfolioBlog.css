@@ -1,3 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+
 .portfolioBlog{
-    color: red;
+    /* color: red; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.portfolioBlog__header{
+    margin-bottom: 40px;
+}
+
+.portfolioBlog__posts{
+    /* border: 3px solid purple; */
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolioBlog__post{
+    flex: 1 1 45%;
+    /* border: 4px solid red; */
+    position: relative;
+}
+
+.portfolioBlog__post > p:first-of-type{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* color: white; */
+    background: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 11px;
+}
+
+.portfolioBlog__img > img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.portfolioBlog__img > img:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolioBlog__img{
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.portfolioBlog__date{
+    margin-top:15px;
+    margin-bottom: 5px;
+    font-size:11px;
+}
+
+.porfolioBlog__text{
+    font-weight: 600;
+    color: #222222;
 }
