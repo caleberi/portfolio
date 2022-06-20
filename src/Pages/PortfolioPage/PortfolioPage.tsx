@@ -6,6 +6,11 @@ import PortfolioProjects from '../../Components/PortfolioProjects/PortfolioProje
 import PortfolioAbout from '../../Components/PortfolioAbout/PortfolioAbout';
 import './PortfolioPage.css';
 import PortfolioBlog from '../../Components/PortfolioBlog/PortfolioBlog';
+import { AiOutlineUser } from 'react-icons/ai'
+import { FaGraduationCap } from 'react-icons/fa'
+import { RiBriefcase2Line } from 'react-icons/ri'
+import { MdOutlineArticle } from 'react-icons/md'
+import { GrArticle, GrProjects } from 'react-icons/gr'
 
 
 const PortfolioPage = () => {
@@ -13,19 +18,23 @@ const PortfolioPage = () => {
     const pageLinks = [
         {
             id: 0,
-            name: 'About'
+            name: 'About',
+            img: <AiOutlineUser />
         },
         {
             id: 1,
             name: 'Resume',
+            img: <FaGraduationCap />
         },
         {
             id: 2,
             name: 'Portfolio',
+            img: <RiBriefcase2Line />
         }, 
         {
             id: 3,
-            name: 'Blog'
+            name: 'Blog',
+            img: <MdOutlineArticle />
         }
     ];
 
@@ -54,17 +63,19 @@ const PortfolioPage = () => {
                 {PageDisplay(pageLinks[1].id)}
             </PortfolioRoutesPages>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className='portfolio__pageContainerLinks' >
             {pageLinks.map(pageLink => (
                 <p 
-                    style={{ cursor: 'pointer', textDecoration: 'underline', color: 'blue'}}
+                    className='portfolio__pageContainerLink'
                     key={pageLink.id} 
                     onClick={() => setTrackPage(pageLink.id)}
                 >
-                    {pageLink.name}
+                    {/* {pageLink.name} */}
+                    <p>{pageLink.img}</p>
                 </p>
             ))}         
         </div>
+        {/* <a href=""></a> */}
     </div>
   )
 }

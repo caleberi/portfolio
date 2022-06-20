@@ -14,3 +14,38 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     background: #04B4E0;
 }
+
+.portfolio__pageContainerLinks{
+    margin-left: 15px;
+    display: flex; 
+    flex-direction: column; 
+    padding: 25px;
+    border-radius: 49px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.portfolio__pageContainerLink{
+    color: lightgray;
+    font-size: 30px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.portfolio__pageContainerLink:hover{
+    color: #04B4E0;
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio__page{
+        flex-direction: column-reverse;
+    }
+
+    .portfolio__pageContainerLinks{
+        flex-direction: row;
+        width: 80%;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        margin-bottom: 10px;
+    }
+}
