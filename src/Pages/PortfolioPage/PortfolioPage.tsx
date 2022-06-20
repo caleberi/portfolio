@@ -31,7 +31,7 @@ const PortfolioPage = () => {
 
     const PageDisplay = (pageLinks: number) => {
         // 0 should be the first page
-        console.log(trackPage ,pageLinks);
+        // console.log(trackPage ,pageLinks);
         if(trackPage === 1){
             return <PortfolioResume />
         }else if(trackPage === 2){
