@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     gap: 45px;
+    /* border: 1px solid red; */
 }
 
 .portfolioAbout__headerImage{
@@ -46,6 +47,26 @@
     font-size: 15px;
 }
 
+.portfolioAbout__buttonContainer{
+    /* border: 1px solid red; */
+}
+
+
+@media screen and (max-width: 950px){
+    .portfolioAbout{
+        margin-top: 40px;
+    }
+
+    .portfolioAbout__header{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolioAbout__buttonContainer {
+    }   
+}
+
+
 /* WHAT I DO SECTION */
 .portfolioAbout__what{
     margin: 100px 0px 50px;
@@ -77,6 +98,12 @@
     margin: 10px 0px;
 }
 
+@media screen and (max-width: 768px){
+    .whatHeader__lists{
+        grid-template-columns: 1fr;
+    }
+}
+
 /* PORTFOLIO ABOUT TESTIMONIAL */
 .portfolioAbout__testimonial{
     /* border: 3px solid purple; */
@@ -96,6 +123,23 @@
     gap: 40px;
     overflow-x: scroll;
     position: relative;
+}
+
+@media screen and (max-width: 768px){
+    .portfolioAbout__testimonialCards{
+        /* display: block; */
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .portfolioAbout__testimonialCards{
+        display: block;
+    }
+
+    .portfolioAbout__testimonialCard{
+        margin-bottom: 50px;
+    }
 }
 
 .portfolioAbout__testimonialCards::-webkit-scrollbar {
@@ -239,6 +283,19 @@
     /* color: red; */
 }
 
+
+@media screen and (max-width: 768px) {
+    .portfolio__pricingContainer{
+        flex-direction: column;
+        row-gap: 35px;
+    }
+    .portfolio__pricingItem{
+        /* border: 1px solid red; */
+        width: 100%;
+        margin-inline: auto;
+    }
+}
+
 /* PORTFOLIO FUN FACTS */
 .portfolio__fun{
     margin-top: 50px;
@@ -285,4 +342,16 @@
 .portfolio__funItem > p:nth-child(3){
     font-size: 36px;
     color: gray;
+}
+
+@media screen and (max-width: 768px){
+    .portfolio__funItems{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .portfolio__funItems{
+        grid-template-columns: 1fr;
+    }
 }

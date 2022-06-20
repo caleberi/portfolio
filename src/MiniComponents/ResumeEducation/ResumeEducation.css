@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+
+/* .resumePointer{
+    position:absolute;
+    left: 97px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #04b4e0;
+    background: white;
+    border-radius: 50%;
+}
+
+.innerPointer{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border: 1px solid #04b4e0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+} */
+
+.resumeEducation{
+    /* color: red; */
+    display: flex;
+    font-size: 13.8px;
+    /* margin-top: 20px; */
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.resumeEducation__left{
+    padding-left:15px;
+    border-right: 1px solid rgb(196, 196, 196);
+    border-left-color: #A8A8A8;
+    border-width: 1.5px;
+    flex: 0.25;
+}
+
+.education__leftYear{
+    font-weight: 600;
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 5px;
+}
+
+.education__leftSchool > p{
+    /* color:rgb(196, 196, 196); */
+    color: #A8A8A8;
+}
+
+.resumeEducation__right{
+    padding-left: 15px;
+    flex: 0.75;
+}
+
+.education__rightCourse{
+    font-size: 1rem;
+    color: #222222;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.education__rightText > p{
+    color: #555555;
+    line-height: 24.15px;
+}

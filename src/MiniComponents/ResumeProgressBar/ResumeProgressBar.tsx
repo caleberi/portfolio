@@ -22,7 +22,7 @@ const ResumeProgressBar = ({ width, backgroundColor, name, percent, border }: Pr
             <div className="resumeProgressBarInner" 
                 style={{
                     width: `${percent}%`, 
-                    backgroundColor
+                    backgroundColor,
                 }}
             >
                 {/* width is here... */}

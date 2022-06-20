@@ -5,6 +5,8 @@ import ResumeProgressBar from '../../MiniComponents/ResumeProgressBar/ResumeProg
 import './PortfolioResume.css'
 import Client2 from '../../assets/portfolioAssets/client-2.png';
 import Client6 from '../../assets/portfolioAssets/client-6.png';
+import ResumeEducation from '../../MiniComponents/ResumeEducation/ResumeEducation'
+import ResumeExperience from '../../MiniComponents/ResumeExperience'
 
 const PortfolioResume = () => {
 
@@ -64,6 +66,33 @@ const PortfolioResume = () => {
     }
   ])
 
+  const [experiences] = useState([
+    {
+      id: 3, 
+      role: 'Lead UI/UX Designer',
+      text: 'Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.',
+      company: 'Envato',
+      startYear: 2016,
+      // if no finishYear => display current
+    },
+    {
+      id: 2, 
+      role: 'Senior UI/UX Designer',
+      text: '    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor est modi voluptates enim ex aliquid tempore recusandae consequatur.',
+      company: 'Envato',
+      startYear: 2013,
+      finishYear: 2016
+    },
+    {
+      id: 1, 
+      role: 'Junior UI/UX Designer',
+      text: 'Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna.',
+      company: 'Envato',
+      startYear: 2011,
+      finishYear: 2013
+    },
+  ])
+
   return (
     <div className="resume">
       <h2>Portfolio Resume</h2>
@@ -73,40 +102,36 @@ const PortfolioResume = () => {
           {/* EDUCATION */}
           <div className="resume__gridLeftEducation">
             <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-            <h3>Education</h3>
-
+            <ResumeEducation 
+              text='Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante.'
+              year={2008}
+              course='Frontend Development'
+              school='Columbia'
+              styles={{paddingBottom: '10px'}}
+            />
+             <ResumeEducation 
+              text='Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante.'
+              year={2008}
+              course='Frontend Development'
+              school='Columbia'
+              // styles={{paddingTop: '5px'}}
+            />
+        
+            <div className="resume__experience">
+              <h3>Experience</h3>
+              
+              <div className="resume__experiences">
+                {experiences.map((experience) => (
+                  <ResumeExperience  
+                    startYear={experience.startYear} 
+                    finishYear={experience.finishYear}
+                    role={experience.role}
+                    company={experience.company}
+                    text={experience.text}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         
@@ -140,7 +165,7 @@ const PortfolioResume = () => {
             border='1px solid blue'
           />
 
-          <h3>Coding Skills</h3>   
+          <h3 className="resume__codingSkills">Coding Skills</h3>   
           <ResumeProgressBar 
             backgroundColor="#0BA376"
             name='Javascript'

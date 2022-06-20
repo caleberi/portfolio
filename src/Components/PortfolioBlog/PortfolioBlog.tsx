@@ -60,7 +60,7 @@ const PortfolioBlog = () => {
             category: 'Design'
         },
     ])
-  return (
+return (
     <div className="portfolioBlog">
         <h1 className="portfolioBlog__header">Blog</h1>
 

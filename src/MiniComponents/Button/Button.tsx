@@ -9,9 +9,10 @@ type ButtonProps = {
   backgroundColor: string;
   marginTop?: string;
   marginRight?: string;
+  marginBottom?: string;
 }
 
-const Button = ({ children, border, borderRadius, backgroundColor, color, marginTop, marginRight}: ButtonProps) => {
+const Button = ({ children, border, borderRadius, backgroundColor, color, marginTop, marginRight, marginBottom}: ButtonProps) => {
   return (
     <button
         style={{
@@ -21,7 +22,8 @@ const Button = ({ children, border, borderRadius, backgroundColor, color, margin
             borderRadius,
             backgroundColor,
             marginTop,
-            marginRight
+            marginRight,
+            marginBottom
         }}
         className='custom-button'
     >

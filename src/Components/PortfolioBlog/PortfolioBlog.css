@@ -60,3 +60,9 @@
     font-weight: 600;
     color: #222222;
 }
+
+@media screen and (max-width:768px){
+    .portfolioBlog__post{
+        flex: 1 1 100%;
+    }
+}

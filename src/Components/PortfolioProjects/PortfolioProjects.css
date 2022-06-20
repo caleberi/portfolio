@@ -14,7 +14,7 @@
 .portfolioProjects__links{
     display: flex;
     margin: 20px 0px 40px;
-    /* border: 1px solid red; */
+    /* border: 1px solid orangered; */
     width: 70%;
     justify-content: space-between;
 }
@@ -61,3 +61,26 @@
     font-weight: bolder;
 } 
 
+@media screen and (max-width: 900px){
+    .portfolioProjects__links{
+        flex-wrap: wrap;
+        width: 100%;
+        column-gap: 20px;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .portfolioProjects{
+        /* border: 1px solid green; */
+    }
+
+    .portfolioProjects__links{
+        /* width: 100%; */
+        /* display: none; */
+    }
+
+    .portfolioProjects__item{
+        flex: 1 1 100%;
+    }
+}

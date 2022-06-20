@@ -5,16 +5,43 @@
 .resume__grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    /* border: 1px solid red; */
+}
+
+.resume__gridLeft{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+}
+
+.resume__gridLeftEducation > h3{
+    margin-bottom: 15px;
+}
+
+.resume__experience > h3{
+    margin: 20px 0px;
 }
 
 .resume__gridRight{
-    /* background: red; */
+    /* border: 1px solid red; */
+    margin-top: 20px;
+}
+
+.resume__gridRight > h3{
+    margin-bottom: 20px;
+}
+
+/* RESUME KNOWLEDGE */
+.resume__knowledge{
+    /* border: 1px solid green; */
+    margin-top: 30px;
 }
 
 .resume__knowledgeButtonContainer{
     /* border: 1px solid red; */
     width: 80%;
 }
+
 
 /* RESUME CERTIFICATES */
 .resume__certificatesContainer{
@@ -32,6 +59,7 @@
     display: flex;
     width: 100%;
     gap:30px;
+    /* border: 1px solid red; */
 }
 
 .resume__certificatesItem{
@@ -41,6 +69,7 @@
     /* padding: 20px 25px; */
     border-radius: 20px;
     display: flex;
+
 }
 
 .resume__contentImage{
@@ -92,4 +121,30 @@
     /* margin-top: -20px; */
     transition: 0.3s ease-in-out;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+@media screen and (max-width:850px){
+    .resume__grid{
+        grid-template-columns: 1fr;
+    }
+
+    .resume__knowledgeButtonContainer{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .resume__certificatesItems{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .resume__certificatesItem{
+        flex-direction: column;
+    }
+
+    .resume__contentImage{
+        border-radius: 20px;
+    }
 }

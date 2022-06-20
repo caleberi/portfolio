@@ -193,7 +193,7 @@ const PortfolioAbout = () => {
                     <p>I am a Full-Stack Web Developer & Web Designer based in The USA, but working Worldwide. I am passionate about designing and developing user-friendly websites. I have all the skills to create a new high quality website or improve existing websites for individuals and organisations, using the latest techniques and trends.</p>
                 </div>
 
-                <div style={{ marginTop: '50px' }}>
+                <div className="portfolioAbout__buttonContainer" style={{ marginTop: '50px' }}>
                     <Button 
                         border='2px solid #04B4E0'
                         borderRadius='50px'
@@ -201,6 +201,7 @@ const PortfolioAbout = () => {
                         color='black'
                         backgroundColor='white'
                         marginRight='10px'
+                        marginBottom='15px'
                     />
 
                     <Button 
@@ -235,8 +236,8 @@ const PortfolioAbout = () => {
                 <h3>Testimonial</h3>
 
                 <div className="portfolioAbout__testimonialButtons">
-                    <ButtonCarousel children={<BsChevronLeft/>} handleClick={() => alert('working from props ts kingdom')}/>
-                    <ButtonCarousel children={<BsChevronRight/>} handleClick={() => alert('working from props ts kingdom')}/>
+                    <ButtonCarousel children={<BsChevronLeft/>} handleClick={() => alert('not working yet, scroll manually')}/>
+                    <ButtonCarousel children={<BsChevronRight/>} handleClick={() => alert('not working yet, scroll manually')}/>
                 </div>
             </div>
             

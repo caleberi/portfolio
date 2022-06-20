@@ -66,24 +66,13 @@
     margin-top: 30px;
 }
 
-/* .portfolio__summaryCV{
-    margin-top: 50px;
-    padding: 12px 32px;
-    border-radius: 50px;
-    border: 2px solid white;
-    background: transparent;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.portfolio__summaryCV:hover{
-    background: white;
-    color: #04B4E0;
-    border: 2px solid #04B4E0;
-} */
-
 .portfolio__summaryDetailsFooter{
     margin-bottom: 10px;
     font-size: 12px;
+}
+
+@media screen and (max-width:1200px) {
+    .portfolio__summary{
+        display: none;
+    }
 }
