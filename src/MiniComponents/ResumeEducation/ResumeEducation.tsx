@@ -4,18 +4,12 @@ import './ResumeEducation.css'
 type ResumeEducationProps = {
     year: number;
     text: string;
-    school?: string;
-    course?: string;
-
-    startYear?: number;
-    finishYear?: number;
-    role?: string;
-    company?: string;
-
+    school: string;
+    course: string;
     styles?: React.CSSProperties;
 }
 
-const ResumeEducation = ({year, text, school, course, finishYear, role, company,startYear, styles}: ResumeEducationProps) => {
+const ResumeEducation = ({year, text, school, course, styles}: ResumeEducationProps) => {
   return (
     <section className="resumeEducation" style={styles}>
         <div className="resumePointer">

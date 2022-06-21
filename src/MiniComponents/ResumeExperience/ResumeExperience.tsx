@@ -2,20 +2,15 @@ import React from 'react'
 import './ResumeExperience.css'
 
 type ResumeExperienceProps = {
-    year?: number;
     text?: string;
-    school?: string;
-    course?: string;
-
-    startYear?: number;
+    startYear: number;
     finishYear?: number;
-    role?: string;
-    company?: string;
-
+    role: string;
+    company: string;
     styles?: React.CSSProperties;
 }
 
-const ResumeExperience = ({year, text, school, course, finishYear, role, company,startYear, styles}: ResumeExperienceProps) => {
+const ResumeExperience = ({ text, finishYear, role, company,startYear, styles}: ResumeExperienceProps) => {
   return (
     <section className="resumeExperience" style={styles}>
         <div className="resumePointer">

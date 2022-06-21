@@ -5,7 +5,7 @@ type PageRoutesProp = {
     children: React.ReactNode,
 }
 
-const PortfolioRoutesPages = ({children} : PageRoutesProp) => {
+const PortfolioRoutesPages = ({ children } : PageRoutesProp) => {
   return (
     <div className="portfolioRoutesPages">
         {children}

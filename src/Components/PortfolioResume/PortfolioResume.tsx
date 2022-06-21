@@ -6,7 +6,7 @@ import './PortfolioResume.css'
 import Client2 from '../../assets/portfolioAssets/client-2.png';
 import Client6 from '../../assets/portfolioAssets/client-6.png';
 import ResumeEducation from '../../MiniComponents/ResumeEducation/ResumeEducation'
-import ResumeExperience from '../../MiniComponents/ResumeExperience'
+import ResumeExperience from '../../MiniComponents/ResumeExperience/ResumeExperience'
 
 const PortfolioResume = () => {
 
