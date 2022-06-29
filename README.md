@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Profile Page
+<img width="1680" alt="Screenshot 2022-06-29 at 20 03 38" src="https://user-images.githubusercontent.com/31941399/176516028-b52ce4ff-4f6b-4467-9078-b877e3fdb233.png">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with React . It is just a basic react application that can used as a profile page website .
 
 ## Available Scripts
 
