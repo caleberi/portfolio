@@ -18,30 +18,28 @@ const PortfolioSummary = () => {
         </div>
         
         <div className="portfolio__summaryDetails">
-            <h2>Alex Smith</h2>
-            <p>Web Designer</p>
+            <h2>Adewole Caleb Erioluwa</h2>
+            <p>Software Engineer</p>
             
             <div className="portfolio__summaryDetailIcon">
                 <FaFacebookF style={style}/>
-                <FaLinkedinIn style={style}/>
-                <FaTwitter style={style}/>
+                <a href="https://www.linkedin.com/in/adewole-caleb/"><FaLinkedinIn style={style}/></a>
+                <a href="https://twitter.com/soundboax"><FaTwitter style={style}/></a>
             </div>
-
-            {/* <button className="portfolio__summaryCV">
-                Download CV
-            </button> */}
         <Button 
             border='2px solid white'
             borderRadius='50px'
-            children = 'Download CV'
+            children = 'View CV'
             color='white'
             backgroundColor='transparent'
             marginTop='50px'
+            href='https://docs.google.com/document/d/1tN_KscJQdc24TMDMLSmHv7pv8RCqjwM2cp9qNXTyfWc/edit?usp=sharing'
+            textColor='white'
         />
         </div>
 
         <div className="portfolio__summaryDetailsFooter">
-            <small>2020 All rights reserved.</small>
+            <small>2022 All rights reserved.</small>
         </div>
 
     </div>
