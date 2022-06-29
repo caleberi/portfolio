@@ -18,7 +18,6 @@ const ResumeEducation = ({year, text, school, course, styles}: ResumeEducationPr
         <section className="resumeEducation__left">
             <p className="education__leftYear">{year}</p>
             <div className="education__leftSchool">
-                <p>University of</p>
                 <p>{school}</p>
             </div>
         </section>
