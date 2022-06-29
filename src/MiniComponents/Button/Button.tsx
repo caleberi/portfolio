@@ -10,9 +10,30 @@ type ButtonProps = {
   marginTop?: string;
   marginRight?: string;
   marginBottom?: string;
+  href?:string,
+  textColor?:string
 }
 
-const Button = ({ children, border, borderRadius, backgroundColor, color, marginTop, marginRight, marginBottom}: ButtonProps) => {
+const Button = ({ children, border, borderRadius, backgroundColor, color, marginTop, marginRight, marginBottom,href,textColor}: ButtonProps) => {
+  if(href){
+    return  (
+      <button
+          style={{
+              // ES6 syntax
+              border: border,
+              color,
+              borderRadius,
+              backgroundColor,
+              marginTop,
+              marginRight,
+              marginBottom
+          }}
+          className='custom-button'
+      >
+          <a href={href} style={{textDecoration:"none",color:textColor}}>{children}</a>
+      </button>
+    )
+  }
   return (
     <button
         style={{
