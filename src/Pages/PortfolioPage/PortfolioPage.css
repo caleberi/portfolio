@@ -1,5 +1,5 @@
 .portfolio__page{
-    background-color: #DEE3E5;
+    background-color: #ffac79;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
     border-radius:20px;
     display: flex;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    background: #04B4E0;
+    background: #74787a;
 }
 
 .portfolio__pageContainerLinks{
@@ -34,7 +34,7 @@
 }
 
 .portfolio__pageContainerLink:hover{
-    color: #04B4E0;
+    color: #74787a;
 }
 
 @media screen and (max-width: 768px) {
