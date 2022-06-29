@@ -4,7 +4,7 @@
 
 .resume__grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 20px;
     /* border: 1px solid red; */
 }
@@ -20,26 +20,6 @@
 
 .resume__experience > h3{
     margin: 20px 0px;
-}
-
-.resume__gridRight{
-    /* border: 1px solid red; */
-    margin-top: 20px;
-}
-
-.resume__gridRight > h3{
-    margin-bottom: 20px;
-}
-
-/* RESUME KNOWLEDGE */
-.resume__knowledge{
-    /* border: 1px solid green; */
-    margin-top: 30px;
-}
-
-.resume__knowledgeButtonContainer{
-    /* border: 1px solid red; */
-    width: 80%;
 }
 
 
