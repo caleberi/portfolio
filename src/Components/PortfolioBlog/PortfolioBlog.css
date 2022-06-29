@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
 
 .portfolioBlog{
-    /* color: red; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -27,11 +26,12 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    /* color: white; */
+    color: #555555;
+    font-size: 11px;
+    font-family: 'Poppins', sans-serif;
     background: white;
     border-radius: 10px;
     padding: 5px 10px;
-    font-size: 11px;
 }
 
 .portfolioBlog__img > img{
@@ -39,10 +39,10 @@
     border-radius: 20px;
 }
 
-.portfolioBlog__img > img:hover{
+/* .portfolioBlog__img > img:hover{
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
-}
+} */
 
 .portfolioBlog__img{
     overflow: hidden;
@@ -56,10 +56,17 @@
     font-size:11px;
 }
 
-.porfolioBlog__text{
-    font-weight: 600;
-    color: #222222;
+p.portfolioBlog__text {
+    font-size: 15px;
+    color: #555;
+    padding-bottom: 10px;
 }
+
+a.portfolioBlog__link{
+ text-decoration: none;
+ color: black;
+}
+
 
 @media screen and (max-width:768px){
     .portfolioBlog__post{
