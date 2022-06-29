@@ -1,65 +1,84 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './PortfolioBlog.css'
-import Blog2 from '../../assets/portfolioAssets/blog_post_2_full.jpg';
-import Blog3 from '../../assets/portfolioAssets/blog_post_3_full.jpg';
-import Blog5 from '../../assets/portfolioAssets/blog_post_5_full.jpg';
-import Blog6 from '../../assets/portfolioAssets/blog_post_6_full.jpg';
-import Blog7 from '../../assets/portfolioAssets/blog_post_7_full.jpg';
-import Blog8 from '../../assets/portfolioAssets/blog_post_8_full.jpg';
+import Blog2 from '../../assets/portfolioAssets/Snap.png';
 
+const API_TOKEN  : string = "21a7cbff-d852-45f1-b60d-6577b08ac2ea";
+const HASHNODE_USERNAME : string = "codeboax";
 type BlogProp = {
     id: number;
     text: string;
-    date: string;
-    category: string;
+    title: string;
+    slug: string;
     image: string;
 }
 
+const GET_USER_ARTICLES = `
+    query GetUserArticles($page: Int!) {
+        user(username: "${HASHNODE_USERNAME}") {
+            publication {
+                posts(page: $page) {
+                    title
+                    brief
+                    slug
+                }
+            }
+        }
+    }
+`;
+
+
 const PortfolioBlog = () => {
-    const [blogPosts] = useState<BlogProp[]>([
+
+    async function gql(query:string, variables={}) {
+        const data = await fetch('https://api.hashnode.com/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer-${API_TOKEN}`
+            },
+            body: JSON.stringify({
+                query,
+                variables
+            })
+        });
+        return data.json();
+    }
+
+
+    function convertToBlogPost(data:
         {
-            id: 1,
-            text: 'Best Practices for Animated Progress Indicators',
-            date: '22 June 2020',
+            user:{
+            publication:{
+                posts:{
+                    brief:string,
+                    slug:string,
+                    title:string
+                    hostname:string
+                }[]
+            }
+            } 
+        }){
+        return data.user.publication.posts.map((d,idx)=>({
+            id: idx,
+            title:d.title,
+            text: d.brief,
             image: Blog2,
-            category: 'UI'
-        },
-        {
-            id: 2,
-            text: 'Designing the Perfect Feature Comparison Table',
-            date: '22 June 2020',
-            image: Blog3,
-            category: 'E-Commerce'
-        },
-        {
-            id: 3,
-            text: 'An Overview of E-commerce Platforms',
-            date: '22 June 2020',
-            image: Blog5,
-            category: 'E-Commerce'
-        },
-        {
-            id: 4,
-            text: 'Why I Switched to Sketch For UI Design',
-            date: '22 June 2020',
-            image: Blog6,
-            category: 'Design'
-        },
-        {
-            id: 5,
-            text: 'Creative and Innovative Navigation Designs',
-            date: '22 June 2020',
-            image: Blog8,
-            category: 'UI'
-        },
-        {
-            id: 6,
-            text: '6 Easy Steps to Better Icon Design',
-            date: '22 June 2020',
-            image: Blog7,
-            category: 'Design'
-        },
-    ])
+            slug: d.slug,
+            hostname:d.hostname
+        }))
+    }
+    const [blogPosts,setBlogPost] = useState<BlogProp[]>([])
+    useEffect(()=>{
+        const getBlogPost = async () => {
+           const res  =  await gql(GET_USER_ARTICLES,{ page: 0 });
+           setBlogPost(convertToBlogPost(res.data));
+        }
+        
+        if(!blogPosts.length){
+            getBlogPost()
+        }
+    },[blogPosts]);
+
 return (
     <div className="portfolioBlog">
         <h1 className="portfolioBlog__header">Blog</h1>
@@ -70,9 +89,9 @@ return (
                     <div className="portfolioBlog__img">
                         <img src={blogPost.image} alt={`blogPost-${blogPost.id}`} />
                     </div>
-                    <p>{blogPost.category}</p>
-                    <p className="portfolioBlog__date">{blogPost.date}</p>
+                    <p><b>{blogPost.title}</b></p>
                     <p className="portfolioBlog__text">{blogPost.text}</p>
+                    <a className='portfolioBlog__link' href={`https://caleberioluwa.hashnode.dev/${blogPost.slug}`}>{blogPost.slug}</a>
                 </div>
             ))}
         </div>
